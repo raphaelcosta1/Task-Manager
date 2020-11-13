@@ -25,6 +25,12 @@ class TasksController < ApplicationController
   def destroy
   end
 
+  def complete
+  end
+
+  def incomplete
+  end
+
   private
 
   def task_params
