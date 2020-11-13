@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "home#index"
 
-  resources :tasks do
-  end
+  resources :tasks 
 
   resources :profiles, only: %i[show new create update edit] do
     get 'private_page', on: :member
