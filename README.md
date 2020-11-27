@@ -40,9 +40,9 @@ Porém há um bug nesta feature, a atividade da tarefa 1 é tentar identificá-l
 2.1 - Esta atividade é para ser criado um relatório de todas as Tarefas, onde listaremos algo semelhante ao exemplo abaixo:
 ___________________________________ 
 | Tasks (ID) | Comments | Status   |
+|------------|----------|----------|
 | 1          | Aaaaaa   | complete |
 | 2          | Bbbbbb   | complete |
-|__________________________________|
 2.2 - Para isto, crie:
  - Uma controller;
  - Uma rota;
