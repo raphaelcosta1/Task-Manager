@@ -54,14 +54,18 @@ ___________________________________
  - Uma controller;
  - Uma rota;
  - Uma view;
-2.3. - Exiba um relatório das Tasks completas do User, e liste todos os comentários em ordem alfabética conforme o exemplo acima.
-2.4. - Crie um spec de integração para o relatório.
+ 
+  2.3. - Exiba um relatório das Tasks completas do User, e liste todos os comentários em ordem alfabética conforme o exemplo acima.
+  
+  2.4. - Crie um spec de integração para o relatório.
 
 ### Tarefa 3
 
-3. Crie um CRUD de tarefas em tasks/new
-3.1. Temos o arquivo deste spec vazio, escreva o(s) spec(s) de integração.
-3.2. Crie um spec unitário.
+3 - Crie um CRUD de tarefas em tasks/new;
+
+  3.1 - Temos o arquivo deste spec vazio, escreva o(s) spec(s) de integração;
+  
+  3.2 - Crie um spec unitário.
 
 ### Boa sorte
 
