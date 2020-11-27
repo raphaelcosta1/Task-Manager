@@ -1,4 +1,6 @@
 ## Challenge AutoSeg
+
+
 ### TaskManager App
 Considere o app deste projeto já estruturado, onde nele conseguimos cadastrar tarefas do dia-a-dia a serem realizadas, junto com uma descrição, colocar comentários e algumas outras features :) 
   Então... considere a atual estrutura de model já existente:
@@ -46,17 +48,23 @@ ___________________________________
 |------------|----------|----------|
 | 1          | Aaaaaa   | complete |
 | 2          | Bbbbbb   | complete |
-2.2 - Para isto, crie:
+
+
+2.2. - Para isto, crie:
  - Uma controller;
  - Uma rota;
  - Uma view;
-2.3 - Exiba um relatório das Tasks completas do User, e liste todos os comentários em ordem alfabética conforme o exemplo acima.
-2.4 - Crie um spec de integração para o relatório.
+2.3. - Exiba um relatório das Tasks completas do User, e liste todos os comentários em ordem alfabética conforme o exemplo acima.
+2.4. - Crie um spec de integração para o relatório.
+
 ### Tarefa 3
-3 - Crie um CRUD de tarefas em tasks/new
-3.1 - Temos o arquivo deste spec vazio, escreva o(s) spec(s) de integração.
-3.2 - Crie um spec unitário.
+
+3. Crie um CRUD de tarefas em tasks/new
+3.1. Temos o arquivo deste spec vazio, escreva o(s) spec(s) de integração.
+3.2. Crie um spec unitário.
+
 ### Boa sorte
+
 Caso tenha dúvidas, por gentileza entre em contato com a Equipe AutoSeg :)
 ### Observações
 - Não é necessário realizar o deploy do projeto no Heroku.
