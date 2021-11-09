@@ -32,7 +32,7 @@ $ git clone git@github.com:autoseg/mini-app.git
 2 - Build o projeto e roda os seeds
 ```console
 $ bundle install
-$ bundle exec rails db:create db:migrate db:seeds
+$ bundle exec rails db:create db:migrate db:seed
 $ yarn install --check-files
 $ rails s
 ```
