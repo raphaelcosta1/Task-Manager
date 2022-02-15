@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   skip_before_action :verify_authenticity_token, only: %i[search]
     
   def index
+    @tasks = current_user.tasks
   end
 
   def show 
