@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
-  before_action :get_profile, only: [:show, :edit, :update]
+  before_action :get_profile, only: %i[show edit update]
   before_action :authenticate_user!
-  before_action :public?, except: %i[private_page, new]
+  before_action :public?, except: %i[private_page new]
  
   def show
   end

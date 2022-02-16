@@ -1,0 +1,31 @@
+<div class='container form-group'>
+<h1>New Task</h1>
+<%= form_for @task do |f| %>
+  <div class='row'>
+    <div class='col-12'>
+      <%= f.label :title, "Title" %>
+        <%= f.text_field :title, class:"form-control" %>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-12'>
+      <%= f.label :description, "Description" %>
+        <%= f.text_field :description, class:"form-control" %>
+    </div>
+  </div>
+
+  <div class='row'>
+    <div class='col-12'>
+      <%= f.label :priority, "Priority" %>
+        <%= f.select(:priority, ["low", "medium" , "high" ], {},{:class=> "form-control"}) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class='col-12'>
+      <%= f.submit class: "btn btn-primary mt-2" %>
+    </div>
+  </div>
+  <%end%>
+</div>
