@@ -2,10 +2,11 @@
 
 <h1>Lista de Tarefas</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Tasks (ID)</th>
+      <th>Title</th>
       <th>Comments</th>
       <th>Status</th>
       <th colspan="3"></th>
@@ -15,10 +16,9 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.name %></td>
-        <td><%= task.descricao %></td>
-        <td><%= task.inicio %></td>
-        <td><%= task.previsao %></td>
+        <td><%= task.id %></td>
+        <td><%= task.title %></td>
+        <td><%= task.comment_id %></td>
         <td><%= task.status %></td>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
