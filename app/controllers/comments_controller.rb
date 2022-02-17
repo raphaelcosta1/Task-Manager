@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :comment_owner?
+  before_action :comment_owner?, only: %i[index]
 
   def index
     @comments = Comment.where(user: current_user)
@@ -11,10 +11,28 @@ class CommentsController < ApplicationController
         @comments.order!(:created_at)
       end
     end
-  end 
+  end
 
-  private 
-    
+  def new
+    @task = Task.find(params[:task_id])
+    @comment = Comment.new
+  end
+
+  def create
+    @task = Task.find(params[:task_id])
+    @comment = Comment.new(comment_params)
+    @comment.user = current_user
+    @comment.task = @task
+      if @comment.save
+        redirect_to tasks_path, notice: 'Comment created successfully :)'
+      else
+        flash[:danger] = @comment.errors.full_messages
+        render :new
+      end
+  end
+
+  private
+
   def comment_owner?
     @profile = Profile.find(params[:profile_id])
     if !current_user
@@ -23,5 +41,10 @@ class CommentsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def comment_params
+    params.require(:comment).permit(:body)
+  end
+
 end
 
