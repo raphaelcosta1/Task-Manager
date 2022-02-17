@@ -1,20 +1,26 @@
-<div class="form-group align-item-center container border">
-  <div class="text-center">
+<div class='form-group align-item-center container border'>
+  <div class='text-center'>
     <h1>New Comment</h1>
   </div>
 
   <%= form_for ([@task, @comment]) do |f| %>
-  <div class="row">
-    <div class="col-12 text-center">
-      <%= f.label :body, "Comment" %> <%= f.text_field :body, class:
-      "form-control", placeholder: 'Type your Comment' %>
+    <div class='row'>
+      <p class='col-12'></p>
+      <div class='col-12 text-center'>
+        <%= f.label :body, 'Comment:' %>
+        <%= f.text_field :body, class: 'form-control' , placeholder: 'Type your Comment' %>
+      </div>
     </div>
-  </div>
-  <br />
+    <br />
 
-  <div class="row">
-    <div class="col-12"><%= f.submit class: "btn btn-primary mt-2" %></div>
-  </div>
+    <div class='row'>
+      <p class='col-12'></p>
+      <div class='col-12' align='center'>
+        <%= f.hidden_field :user_id, value: params[:id]%>
+        <%= f.submit 'Create', class: 'btn btn-primary col-3'%>
+        <%= link_to 'My Tasks', tasks_path, class: 'btn btn-secondary col-3' %>
+      </div>
+    </div>
 
-  <% end %>
+    <% end %>
 </div>
