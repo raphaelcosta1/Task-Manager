@@ -65,7 +65,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
-end 
+  config.include Capybara::DSL
+end
 
 FactoryBot::SyntaxRunner.class_eval do
   include ActionDispatch::TestProcess
