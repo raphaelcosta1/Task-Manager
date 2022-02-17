@@ -1,0 +1,34 @@
+<div class='container'>
+
+  <div class='text-center'>
+    <h1>Completed Tasks</h1>
+  </div>
+
+  <br>
+
+  <% @tasks.each do |task| %>
+    <div class='row'>
+      <div class='col-12'>
+
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>Tasks (ID)</th>
+              <th>Comment</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% task.comments.order(body: :asc).each do |comment| %>
+              <tr>
+                <td><%= task.id %></td>
+                <td><%= comment.body %></td>
+                <td>Complete</td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <% end %>
+</div>

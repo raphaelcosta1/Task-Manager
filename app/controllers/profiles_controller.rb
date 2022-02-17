@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   before_action :get_profile, only: %i[show edit update]
   before_action :authenticate_user!
   before_action :public?, except: %i[private_page new]
- 
+
   def show
   end
 
@@ -10,28 +10,27 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
   end
 
-  def create 
-    @profile = Profile.create(profile_params)
+  def create
+    @profile = Profile.new(profile_params)
     @profile.user = current_user
-    current_user.profile_id = @profile.id
     if @profile.save
-      flash[:notice] = 'Profile Created!'
+            flash[:notice] = 'Profile Created. Welcome!'
       redirect_to @profile
     else
       render :new
     end
   end
 
-  def edit 
+  def edit
   end
 
   def update
     if @profile.update(profile_params)
-      flash[:notice] = 'Task Updated!'
+      flash[:notice] = 'Task Updated! Go for it!'
       redirect_to @profile
     else
       render :edit
-    end 
+    end
   end
 
   def change_privacy
@@ -39,20 +38,20 @@ class ProfilesController < ApplicationController
     redirect_to @profile
   end
 
-  def private_page 
+  def private_page
   end
 
-  private 
+  private
 
   def profile_params
     params.require(:profile).permit(:nickname, :bio, :avatar)
-  end 
+  end
 
   def privacy_params
     params.require(:profile).permit(:share)
   end
 
-  def get_profile
+  def find_profile
     @profile = Profile.find(params[:id])
   end
 
@@ -65,4 +64,4 @@ class ProfilesController < ApplicationController
   end
 
 end
-  
+

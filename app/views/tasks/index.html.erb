@@ -1,39 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
 
-<div class='text-center'>
-  <h1>Tasks List</h1>
-</div>
+  <div class='text-center'>
+    <h1>All Tasks</h1>
+  </div>
 
-<br>
+  <br>
 
-<div class="d-flex container justify-content-center"></div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Tasks (ID)</th>
-        <th>Title</th>
-        <th>Comments</th>
-        <th>Status</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @tasks.each do |task| %>
+  <div class="d-flex container justify-content-center"></div>
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= task.id %></td>
-          <td><%= task.title %></td>
-          <td><%= task.comment_id %></td>
-          <td><%= task.status %></td>
-          <td><%= link_to 'New Comment' , new_task_comment_path(task) %></td>
-          <td><%= link_to 'Edit' , edit_task_path(task) %></td>
-          <td><%= link_to 'Destroy' , task, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </td>
+          <th>Tasks (ID)</th>
+          <th>Title</th>
+          <th>Comments</th>
+          <th>Status</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-<br />
+      <tbody>
+        <% @tasks.each do |task| %>
+          <tr>
+            <td><%= task.id %></td>
+            <td><%= task.title %></td>
+            <td><%= task.comment_id %></td>
+            <td><%= task.status %></td>
+            <td><%= link_to 'New Comment' , new_task_comment_path(task) %></td>
+            <td><%= link_to 'Edit' , edit_task_path(task) %></td>
+            <td><%= link_to 'Destroy' , task, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<%= link_to 'New Task' , new_task_path %>
+  <br />
+  <%= link_to 'New Task' , new_task_path %>
+</div>
