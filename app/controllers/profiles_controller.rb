@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-  before_action :get_profile, only: %i[show edit update]
+  before_action :find_profile, only: %i[show edit update]
+  #corrigi o nome do método do before action
   before_action :authenticate_user!
   before_action :public?, except: %i[private_page new]
 
@@ -14,7 +15,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.user = current_user
     if @profile.save
-            flash[:notice] = 'Profile Created. Welcome!'
+      flash[:notice] = 'Profile Created. Welcome!'
       redirect_to @profile
     else
       render :new
